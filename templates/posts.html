@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Posts</title>
+{% endblock %}
+
+{% block body %}
+<div>
+    <h1 style='display:inline'>All Posts</h1>
+    <!-- 1:11:x 留言板顯示的內容-->
+    <a style='display:inline' class='btn btn-success float-right' href='/posts/new'>++ New Post</a>
+</div>
+<hr>
+
+
+{% for post in posts %}
+<br>
+<h2>{{ post.title }}</h2>
+
+{% if post.author %}
+<small>Written By: {{ post.author }} on {{ post.date_posted }}</small>
+<!-- <h3>By:{{ post.author }}</h3> -->
+{% else %}
+<small>Written By: Mr.unkown on {{ post.date_posted }}</small>
+<!-- <h3>By: N/A</h3> -->
+{% endif %}
+<br>
+<br>
+
+<p>{{ post.content }}</p>
+<a class='btn btn-danger btn-sm' href='/posts/delete/{{ post.id }}'>Delete</a>
+<a class='btn btn-primary btn-sm' href='/posts/edit/{{ post.id }}'>Edit</a>
+<br>
+{% endfor %}
+
+{% endblock %}

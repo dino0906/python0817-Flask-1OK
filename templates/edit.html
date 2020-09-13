@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Edit Post</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Edit Posts</h1>
+        <!-- 1:11:x 留言板顯示的內容-->
+    <hr>
+    <h2>Edit:</h2>
+    <form action='/posts/edit/{{ post.id }}' method='POST'>
+        <label for="title">Title:</label>
+        <input class="form-control" type='text' name='title' id='title' value='{{ post.title }}' aria-label="Enter Title">
+        <br>
+        <!-- Author:
+        <input type='text' name='author' id='author'> -->
+        <label for="author">Author:</label>
+        <input class="form-control" type='text' name='author' id='author' value='{{ post.author }}' aria-label="Enter Author">
+        <br>
+        <!-- Post: 
+            <input type='text' name='content' id='content'> -->
+        <label for="content">Post:</label>
+        <textarea class="form-control" type='text' name='content' id='content' aria-label="Enter Content" rows="3">{{ post.content }}</textarea>
+        <br>
+        <input class="btn btn-success" type='submit' value='Save'>
+    </form>
+    <hr>
+
+
+{% endblock %}
