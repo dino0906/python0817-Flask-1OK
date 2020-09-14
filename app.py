@@ -1,4 +1,3 @@
-#https://www.youtube.com/watch?v=3mwFC4SHY-Y
 #template夾內 base:html基底;index:首頁顯示框架和{extencs} {blockhead}[endblock];posts:同index頁面
 #static/css靜態資料夾 main:設定字形等等
 #base內 url_for方法 ('static',filename='css/main.css')
